@@ -5,31 +5,49 @@
 
 using namespace std;
 
-void borderString(char,int);
+void border_string(char filler,int counter);
+void dividefrac(float num, float& intfrac, float& floatfrac);
 
 int main()
 {
-	borderString('*', 38);
+	float num, intfrac, floatfrac;
+	
+	border_string('*', 38);
 
-	std::cout << "CPP studying started" << endl;
+	cout << "CPP studying started" << endl;
 
-	borderString('=', 20);
+	border_string('=', 20);
 
-	std::cout << "Student : \t Alexander Dolgosheev" << endl;
+	cout << "Student : \t Alexander Dolgosheev" << endl;
 
-	borderString('\r', 1);
+	border_string('\r', 1);
 
-	std::cout << "Data    : \t 03.06.2021" << endl;
+	cout << "Data    : \t 03.06.2021" << endl;
 
 
-	borderString('*', 38);
+	border_string('*', 38);
+
+
+	cout << "Enter float number ( divider . ) : " ;
+	cin >> num;
+	dividefrac(num,intfrac,floatfrac);
+
+	cout << "Int part : " << intfrac << "\nFloat part : " << floatfrac << endl;
 	
 	return 0;
 }
 
-void borderString(char ch, int count)
+void border_string(char ch, int count)
 {
 	for (int i = 1; i< count; i ++)
-		std::cout << ch;
-	std::cout << endl;
+		cout << ch;
+	cout << endl;
+}
+
+void dividefrac(float num, float& intfrac, float& floatfrac)
+{
+	float temp = static_cast<long>(num);
+	floatfrac = num - temp;
+	intfrac = num - floatfrac;
+	
 }
