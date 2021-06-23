@@ -49,5 +49,4 @@ void dividefrac(float num, float& intfrac, float& floatfrac)
 	float temp = static_cast<long>(num);
 	floatfrac = num - temp;
 	intfrac = num - floatfrac;
-	
 }
